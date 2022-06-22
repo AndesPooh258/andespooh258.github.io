@@ -1,0 +1,49 @@
+.no-dec{
+	color: white;
+}
+
+.no-dec:hover{
+	color: lightblue;
+}
+
+.no-dec-dark{
+	text-decoration: none;
+	color: white;
+}
+
+.no-dec-dark:hover{
+	color: lightblue;
+}
+
+.body-theme{
+	background-color: #212529;
+	color: white;
+}
+
+.header-bg{
+	background-image: url("../img/background-dark.jpg");
+}
+
+.table{
+	color: white;
+}
+
+#about-me{
+	background: #002432;
+}
+
+#education{
+	background: #191919;
+}
+
+#research{
+	background: #260e26;
+}
+
+#project{
+	background: #061a33; 
+}
+
+#hobby{
+	background: #311801;
+}

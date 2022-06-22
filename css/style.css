@@ -1,0 +1,42 @@
+.font-default{
+	font-family: sans-serif;
+}
+
+.left{
+	text-align: left;
+}
+
+.center{
+	text-align: center;
+}
+
+.right{
+	text-align: right;
+}
+
+.justify{
+	text-align: justify;
+}
+
+.hide{
+	display: none;
+}
+
+.no-dec{
+	text-decoration: none;
+}
+
+.header-bg{
+	background-size: 100%;
+	background-position: center;
+}
+
+.pic-w-600px{
+	width: 600px;
+	height: auto;
+}
+
+.pic-w-90{
+	max-width: 90%;
+	height: auto;
+}

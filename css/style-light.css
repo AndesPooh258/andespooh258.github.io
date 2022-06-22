@@ -1,0 +1,36 @@
+.no-dec{
+	color: black;
+}
+
+.no-dec:hover{
+	color: blue;
+}
+
+.body-theme{
+	background-color: white;
+	color: black;
+}
+
+.header-bg{
+	background-image: url("../img/background-light.jpg");
+}
+
+#about-me{
+	background: lightblue;
+}
+
+#education{
+	background: lightgrey;
+}
+
+#research{
+	background: thistle;
+}
+
+#project{
+	background: lightsteelblue; 
+}
+
+#hobby{
+	background: wheat;
+}
