@@ -53,7 +53,7 @@ function toggleDark(){
 	let theme = document.querySelector("#theme-css");
 	let button_dark = document.querySelector("#button-dark");
 	if (table != null){
-		table.classList.toggle("table-hover");
+		table.classList.toggle("table-dark");
 	}
 	if(theme != null && button_dark != null){
 		if(lightList.length > 0){

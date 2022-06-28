@@ -24,8 +24,8 @@
 	background-image: url("../img/background-dark.jpg");
 }
 
-.table{
-	color: white;
+.table-dark{
+	--bs-table-bg: transparent;
 }
 
 #about-me{
