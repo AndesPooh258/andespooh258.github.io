@@ -7,7 +7,7 @@ window.onscroll = function(){
 }
 
 function changeImage(){
-	let default_img = 10;
+	let default_img = 7;
 	let num_files = 12;
 	let pic = document.querySelector("#about-pic");
 	if(pic != null){
