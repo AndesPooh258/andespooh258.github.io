@@ -1,3 +1,12 @@
+.body{
+	background-color: #212529;
+	color: white;
+}
+
+.header{
+	background-image: url("../img/background-dark.jpg");
+}
+
 .no-dec{
 	color: white;
 }
@@ -15,35 +24,26 @@
 	color: lightblue;
 }
 
-.body-theme{
-	background-color: #212529;
-	color: white;
-}
-
-.header-bg{
-	background-image: url("../img/background-dark.jpg");
-}
-
 .table-dark{
 	--bs-table-bg: transparent;
 }
 
-#about-me{
+.bg-lightblue{
 	background: #002432;
 }
 
-#education{
+.bg-lightgrey{
 	background: #191919;
 }
 
-#research{
+.bg-thistle{
 	background: #260e26;
 }
 
-#project{
+.bg-lightsteelblue{
 	background: #061a33; 
 }
 
-#hobby{
+.bg-wheat{
 	background: #311801;
 }

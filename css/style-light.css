@@ -1,3 +1,12 @@
+.body{
+	background-color: white;
+	color: black;
+}
+
+.header{
+	background-image: url("../img/background-light.jpg");
+}
+
 .no-dec{
 	color: black;
 }
@@ -6,31 +15,22 @@
 	color: blue;
 }
 
-.body-theme{
-	background-color: white;
-	color: black;
-}
-
-.header-bg{
-	background-image: url("../img/background-light.jpg");
-}
-
-#about-me{
+.bg-lightblue{
 	background: lightblue;
 }
 
-#education{
+.bg-lightgrey{
 	background: lightgrey;
 }
 
-#research{
+.bg-thistle{
 	background: thistle;
 }
 
-#project{
+.bg-lightsteelblue{
 	background: lightsteelblue; 
 }
 
-#hobby{
+.bg-wheat{
 	background: wheat;
 }

@@ -1,9 +1,9 @@
-window.onload = () => window.matchMedia('(prefers-color-scheme: dark)').matches && toggleDark();
+window.onload = () => popupInit() && window.matchMedia('(prefers-color-scheme: dark)').matches && toggleDark();
 
 window.onscroll = function(){
-	let target = document.querySelector(".progress-bar");
+	let progress_bar = document.querySelector(".progress-bar");
 	let progress = (window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100;
-	target.style.width = progress.toString() + "%";
+	progress_bar.style.width = progress.toString() + "%";
 }
 
 function changeImage(){
@@ -21,13 +21,13 @@ function changeImage(){
 }
 
 function toggleSpecialBar(){
-	let target1 = document.querySelector("#special-bar.hide");
-	let target2 = document.querySelector("#special-bar.navbar");
-	if(target1 != null){
-		target1.className = "navbar navbar-expand-lg justify-content-center my-sm-3";
+	let special_bar_hide = document.querySelector("#special-bar.hide");
+	let special_bar = document.querySelector("#special-bar.navbar");
+	if(special_bar_hide != null){
+		special_bar_hide.className = "navbar navbar-expand-lg justify-content-center my-sm-3";
 	} 
-	if(target2 != null){
-		target2.className = "hide";
+	if(special_bar != null){
+		special_bar.className = "hide";
 	}
 }
 
@@ -73,12 +73,40 @@ function toggleDark(){
 }
 
 function toggleScrollBar(){
-	let target1 = document.querySelector("#scroll-bar.hide");
-	let target2 = document.querySelector("#scroll-bar.progress");
-	if(target1 != null){
-		target1.className = "progress sticky-top";
+	let scroll_bar_hide = document.querySelector("#scroll-bar.hide");
+	let scroll_bar = document.querySelector("#scroll-bar.progress");
+	if(scroll_bar_hide != null){
+		scroll_bar_hide.className = "progress sticky-top";
 	}
-	if(target2 != null){
-		target2.className = "hide";
+	if(scroll_bar != null){
+		scroll_bar.className = "hide";
 	}
+}
+
+function addPopupOnClick(popup_box, popup_img, popup_caption, target, src, innerText){
+	target.onclick = function(){
+		popup_box.classList.toggle("hide");
+		popup_img.src = src;
+		popup_caption.innerText = innerText;
+	}
+}
+
+function popupInit(){
+	let popup_box = document.querySelector("#main-popup-box");
+	let popup_img = document.querySelector("#main-popup-img");
+	let popup_caption = document.querySelector("#main-popup-caption");
+	let popup_close = document.querySelector("#main-popup-close");
+	let major_gpa = document.querySelector("#major-gpa");
+	let ptcg_deck = document.querySelector("#ptcg-deck");
+	popup_close.onclick = function(){
+		popup_box.classList.toggle("hide");
+	}
+	addPopupOnClick(popup_box, popup_img, popup_caption, major_gpa, 
+		"./img/popup/major_gpa.png", 
+		"A list of all courses included in the calculation of Major GPA.");
+	
+	addPopupOnClick(popup_box, popup_img, popup_caption, ptcg_deck, 
+		"./img/popup/ptcg_deck.jpg",
+		"My current PTCG deck.");
+	return true;
 }
