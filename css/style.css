@@ -21,6 +21,7 @@
 
 .pic-w-600px{
 	width: 600px;
+	max-width: 100%;
 	height: auto;
 }
 
@@ -81,8 +82,8 @@
 }
 
 @keyframes zoom{
-	from {transform:scale(0)}
-	to {transform:scale(1)}
+	from {transform: scale(0)}
+	to {transform: scale(1)}
 }
 
 @media only screen and (max-width: 768px){
