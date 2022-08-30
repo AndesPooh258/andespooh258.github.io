@@ -21,47 +21,47 @@
 
 .pic-w-600px{
 	width: 600px;
-	max-width: 100%;
 	height: auto;
+	max-width: 100%;
 }
 
 .pic-w-90{
-	max-width: 90%;
 	height: auto;
+	max-width: 90%;
 }
 
 .popup-box{
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.9);
 	position: fixed;
-	z-index: 1;
+	left: 0px;
+	top: 0px;
 	padding-top: 100px;
-	left: 0;
-	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0.9);
+	z-index: 1;
 }
 
 .popup-img{
-	margin: auto;
 	display: block;
+	margin: auto;
 	height: 75%;
 	animation-name: zoom;
-	animation-duration: 0.6s;
+	animation-duration: 0.5s;
 }
 
 .popup-caption{
-	margin: auto;
 	display: block;
+	padding: 10px 0;
+	margin: auto;
+	height: 150px;
 	width: 80%;
 	max-width: 700px;
-	text-align: center;
 	color: #ccc;
-	padding: 10px 0;
-	height: 150px;
+	text-align: center;
 	animation-name: zoom;
-	animation-duration: 0.6s;
+	animation-duration: 0.5s;
 }
 
 .popup-close{
@@ -81,14 +81,40 @@
 	cursor: pointer;
 }
 
+@media only screen and (max-width: 768px){
+	.popup-img{
+		height: auto;
+		width: 80%;
+	}
+}
+
+.to-top-btn{
+	display: none;
+	background-color: #1099dd;
+	position: fixed;
+	padding: 8px;
+	bottom: 10px;
+	right: 10px;
+	width: 40px;
+    height: 40px;
+	border-radius: 4px;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	z-index: 10;
+}
+
 @keyframes zoom{
 	from {transform: scale(0)}
 	to {transform: scale(1)}
 }
 
-@media only screen and (max-width: 768px){
-	.popup-img{
-		width: 80%;
-		height: auto;
-	}
+@keyframes fade-in{
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
+@keyframes fade-out{
+	from {opacity: 1}
+	to {opacity: 0}
 }
