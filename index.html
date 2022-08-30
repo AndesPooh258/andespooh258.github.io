@@ -23,7 +23,7 @@
 			<h4>B.Eng. (Fintech), Ph.D. (IERG) Student</h4>
 		</header>
 		<nav>
-			<div class="navbar navbar-expand-md bg-light justify-content-center my-sm-3">
+			<div id="nav-navbar" class="navbar navbar-expand-md justify-content-center my-sm-3 bg-light">
 				<ul class="navbar-nav">
 					<li class="nav-item p-2"><a class="no-dec" href="#about">About Me</a></li>
 					<li class="nav-item p-2"><a class="no-dec" href="#education">Education</a></li>
@@ -33,14 +33,14 @@
 					<li class="nav-item p-2" onclick="toggleSpecialBar()"><a class="no-dec" href="#">Special</a></li>
 				</ul>
 			</div>
-			<div id="special-bar" class="hide">
+			<div id="nav-special-bar" class="hide">
 				<button type="button" class="btn btn-outline-success my-2 my-sm-0 m-2" onclick="align()">Align</button>
-				<button type="button" class="btn btn-outline-success my-2 my-sm-0 m-2" id="dark-btn" onclick="toggleDark()">Dark</button>
+				<button type="button" class="btn btn-outline-success my-2 my-sm-0 m-2" onclick="toggleDark()" id="nav-dark-btn">Dark</button>
 				<button type="button" class="btn btn-outline-success my-2 my-sm-0 m-2" onclick="toggleScrollBar()">Scroll</button>
 			</div>
 		</nav>
 		<main>
-			<div id="scroll-bar" class="hide sticky-top">
+			<div id="main-scroll-bar" class="hide sticky-top">
 				<div id="main-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" title="progressbar"></div>
 			</div>
 			<div class="container mt-3">
@@ -71,7 +71,7 @@
 						<ul>
 							<li>B.Eng. in <a href="https://fintech.se.cuhk.edu.hk/" class="no-dec" target="_blank">Financial Technology, CUHK</a>, Aug 2018 - Jul 2022
 								<ul>
-									<li>First Class Honours (CGPA: 3.827/4.000, <a href="javascript:void(0);" id="major-gpa" class="no-dec">Major GPA: 3.941/4.000</a>)</li>
+									<li>First Class Honours (CGPA: 3.827/4.000, <a href="javascript:void(0);" id="popup-major-gpa" class="no-dec">Major GPA: 3.941/4.000</a>)</li>
 									<li><a href="https://www.erg.cuhk.edu.hk/erg/Elite" class="no-dec" target="_blank">ELITE Stream</a> (Honour Class in CUHK Faculty of Engineering)</li>
 									<li>Triple minors in (1) Computer Science (2) Information Engineering (3) Web and Cloud Computing</li>	
 								</ul>
@@ -186,7 +186,7 @@
 						<ul class="row">
 							<li class="col-md-6">
 								Pokemon Console Games and TCG
-								<div class="py-1">I have been playing Pokemon console and <a href="javascript:void(0);" id="ptcg-deck" class="no-dec">trading card</a> games since 2013, and I specialize in collecting high-rarity supporter cards which is satisfying (but costly).</div>
+								<div class="py-1">I have been playing Pokemon console and <a href="javascript:void(0);" id="popup-ptcg-deck" class="no-dec">trading card</a> games since 2013, and I specialize in collecting high-rarity supporter cards which is satisfying (but costly).</div>
 								<img class="pic-w-90" src="./img/hobby/ptcg.jpg" alt="ptcg" />
 							</li>
 							<li class="col-md-6">
@@ -231,7 +231,7 @@
 				<img id="main-popup-img" class="popup-img" alt="popup-img" />
 				<div id="main-popup-caption" class="popup-caption"></div>
 			</div>
-			<a href="#" id="main-to-top" class="to-top-btn">
+			<a href="#" id="main-to-top" class="to-top-btn hide">
 				<span class="fa fa-angle-double-up" />
 			</a>
 		</main>

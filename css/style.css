@@ -89,7 +89,6 @@
 }
 
 .to-top-btn{
-	display: none;
 	background-color: #1099dd;
 	position: fixed;
 	padding: 8px;
@@ -102,6 +101,8 @@
 	color: white;
 	font-size: 16px;
 	z-index: 10;
+	animation-name: fade-in;
+	animation-duration: 0.5s;
 }
 
 @keyframes zoom{
