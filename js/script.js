@@ -12,10 +12,10 @@ window.onscroll = function(){
 	// update to-top button with animation
 	if (to_top != null) {
 		if (progress > to_top_threshold && to_top.classList.contains("hide")){
-			to_top.className = "to-top-btn no-dec";
+			to_top.className = "to-top-btn";
 		} else if (progress <= to_top_threshold && !to_top.classList.contains("hide")){
 			to_top.style.animation = "fade-out 0.5s";
-			setTimeout(() => to_top.removeAttribute('style') || (to_top.className = "to-top-btn no-dec hide"), 500);
+			setTimeout(() => to_top.removeAttribute('style') || (to_top.className = "to-top-btn hide"), 500);
 		}
 	}
 }
