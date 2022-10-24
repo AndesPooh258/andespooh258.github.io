@@ -88,6 +88,7 @@ function popupInit(){
 	let popup_caption = document.querySelector("#main-popup-caption");
 	let popup_close = document.querySelector("#main-popup-close");
 	let major_gpa = document.querySelector("#popup-major-gpa");
+	let estr_cuhk = document.querySelector("#popup-estr-cuhk");
 	let ptcg_deck = document.querySelector("#popup-ptcg-deck");
 	// set onClick event on close button
 	popup_close.onclick = function(){
@@ -97,6 +98,9 @@ function popupInit(){
 	addPopupOnClick(popup_box, popup_img, popup_caption, major_gpa, 
 		"./img/popup/major_gpa.png", 
 		"A list of all courses included in the calculation of Major GPA.");
+	addPopupOnClick(popup_box, popup_img, popup_caption, estr_cuhk, 
+		"./img/popup/estr_cuhk.png", 
+		"Exposure to the admission brochure (2022-23) of the Faculty of Engineering, CUHK.");
 	addPopupOnClick(popup_box, popup_img, popup_caption, ptcg_deck, 
 		"./img/popup/ptcg_deck.jpg",
 		"My current PTCG deck.");
