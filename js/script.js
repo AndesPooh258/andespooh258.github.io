@@ -109,7 +109,7 @@ function popupInit(){
 
 function changeImage(){
 	let default_img = 0;
-	let num_files = 12;
+	let num_files = 1;
 	let about_pic = document.querySelector("#about-pic");
 	// update about image
 	if(about_pic != null){
