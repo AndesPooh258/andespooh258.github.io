@@ -1,13 +1,25 @@
-import Router from "./_router.js"
-import Layout from "./_layout.js"
-import Page from "./_page.js"
-const router = new Router(
-    {
-        about: new Layout(new Page("about.html")),
-        research: new Layout(new Page("research.html")),
-        project: new Layout(new Page("project.html")),
-        hobby: new Layout(new Page("hobby.html")),
-        "#default": new Page("about.html"),
-    },
-    document.querySelector("main")
-);
+export default class Router {
+    constructor(routes, el) {
+        this.routes = routes;
+        this.el = el;
+        window.onhashchange = this.hashChanged.bind(this);
+        this.hashChanged();
+    }
+
+    async hashChanged(e) {
+        if (window.location.hash.length > 0) {
+            const pageName = window.location.hash.substr(1);
+            this.show(pageName);
+        } else if (this.routes["#default"]) {
+            this.show("#default");
+        }
+    }
+
+    async show(pageName) {
+        const page = this.routes[pageName];
+        await page.load();
+        this.el.innerHTML = "";
+        page.show(this.el);
+        pageInit();
+    }
+}
