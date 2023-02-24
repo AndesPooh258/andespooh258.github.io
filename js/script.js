@@ -35,7 +35,7 @@ function pageInit(){
 	// update to-top button
 	if (to_top != null){
 		console.log("location.hash.substring(1):" + location.hash.substring(1));
-		to_top.setAttribute('href', location.hash.substring(1) || '#');
+		to_top.setAttribute('href', location.hash || '#');
 	}
 	// initialize pop-up images
 	popupInit();
