@@ -1,4 +1,4 @@
-window.onload = () => popupInit() && window.matchMedia('(prefers-color-scheme: dark)').matches && toggleDark();
+window.onload = window.matchMedia('(prefers-color-scheme: dark)').matches && toggleDark();
 
 window.onscroll = function(){
 	let progress = (window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100;
@@ -20,6 +20,9 @@ window.onscroll = function(){
 	}
 }
 
+pageInit = () => popupInit() && checkTableTheme();
+
+/* special bar related features */
 function toggleSpecialBar(){
 	let special_bar = document.querySelector("#nav-special-bar");
 	// update special bar
@@ -66,6 +69,17 @@ function toggleDark(){
 	}
 }
 
+function checkTableTheme(){
+	let navbar = document.querySelector("#nav-navbar");
+	let is_light = navbar.classList.contains("bg-light");
+	let tables = document.querySelectorAll(".table");
+	if (!is_light && tables != null){
+		for(let i = 0; tables != null && i < tables.length; i++){
+			tables[i].classList.toggle("table-dark");
+		}
+	}
+}
+
 function toggleScrollBar(){
 	let scroll_bar = document.querySelector("#main-scroll-bar");
 	// update scroll bar
@@ -74,6 +88,7 @@ function toggleScrollBar(){
 	}
 }
 
+/* pop-up related features */
 function addPopupOnClick(popup_box, popup_img, popup_caption, target, src, innerText){
 	target.onclick = function(){
 		popup_box.classList.toggle("hide");
@@ -96,24 +111,29 @@ function popupInit(){
 		popup_box.classList.toggle("hide");
 	}
 	// set onClick event on links
-	addPopupOnClick(popup_box, popup_img, popup_caption, major_gpa, 
-		"./img/popup/major_gpa.png", 
-		"A list of all courses included in the calculation of Major GPA.");
-	addPopupOnClick(popup_box, popup_img, popup_caption, estr_cuhk, 
-		"./img/popup/estr_cuhk.png", 
-		"Exposure to the admission brochure (2022-23) of the Faculty of Engineering, CUHK.");
-	addPopupOnClick(popup_box, popup_img, popup_caption, pkm_team, 
-		"./img/popup/pkm_team.jpg",
-		"My current Pokemon team.");
-	addPopupOnClick(popup_box, popup_img, popup_caption, ptcg_deck, 
-		"./img/popup/ptcg_deck.jpg",
-		"My current PTCG deck.");
+	if(major_gpa != null)
+		addPopupOnClick(popup_box, popup_img, popup_caption, major_gpa, 
+			"./img/popup/major_gpa.png", 
+			"A list of all courses included in the calculation of Major GPA.");
+	if(estr_cuhk != null)
+		addPopupOnClick(popup_box, popup_img, popup_caption, estr_cuhk, 
+			"./img/popup/estr_cuhk.png", 
+			"Exposure to the admission brochure (2022-23) of the Faculty of Engineering, CUHK.");
+	if(pkm_team != null)
+		addPopupOnClick(popup_box, popup_img, popup_caption, pkm_team, 
+			"./img/popup/pkm_team.jpg",
+			"My current Pokemon team.");
+	if(ptcg_deck != null)
+		addPopupOnClick(popup_box, popup_img, popup_caption, ptcg_deck, 
+			"./img/popup/ptcg_deck.jpg",
+			"My current PTCG deck.");
 	return true;
 }
 
+/* other features */
 function changeImage(){
 	let default_img = 0;
-	let num_files = 1;
+	let num_files = 6;
 	let about_pic = document.querySelector("#about-pic");
 	// update about image
 	if(about_pic != null){
