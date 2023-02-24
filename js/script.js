@@ -20,7 +20,24 @@ window.onscroll = function(){
 	}
 }
 
-pageInit = () => popupInit() && checkTableTheme();
+function pageInit(){
+	let navbar = document.querySelector("#nav-navbar");
+	let is_light = navbar.classList.contains("bg-light");
+	let tables = document.querySelectorAll(".table");
+	let to_top = document.querySelector("#main-to-top");
+	// update table
+	if (!is_light && tables != null){
+		for(let i = 0; tables != null && i < tables.length; i++){
+			tables[i].classList.toggle("table-dark");
+		}
+	}
+	// update to-top button
+	if (to_top != null){
+		to_top.setAttribute('href', location.hash.substring(1) || '#');
+	}
+	// initialize pop-up images
+	popupInit();
+}
 
 /* special bar related features */
 function toggleSpecialBar(){
@@ -66,17 +83,6 @@ function toggleDark(){
 	// update tables
 	for(let i = 0; tables != null && i < tables.length; i++){
 		tables[i].classList.toggle("table-dark");
-	}
-}
-
-function checkTableTheme(){
-	let navbar = document.querySelector("#nav-navbar");
-	let is_light = navbar.classList.contains("bg-light");
-	let tables = document.querySelectorAll(".table");
-	if (!is_light && tables != null){
-		for(let i = 0; tables != null && i < tables.length; i++){
-			tables[i].classList.toggle("table-dark");
-		}
 	}
 }
 
