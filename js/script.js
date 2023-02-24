@@ -21,7 +21,6 @@ window.onscroll = function(){
 }
 
 function pageInit(){
-	console.log("pageInit()");
 	let navbar = document.querySelector("#nav-navbar");
 	let is_light = navbar.classList.contains("bg-light");
 	let tables = document.querySelectorAll(".table");
@@ -34,8 +33,7 @@ function pageInit(){
 	}
 	// update to-top button
 	if (to_top != null){
-		console.log("location.hash.substring(1):" + location.hash.substring(1));
-		to_top.setAttribute('href', location.hash || '#');
+		to_top.setAttribute('href', window.location.hash || '#');
 	}
 	// initialize pop-up images
 	popupInit();
