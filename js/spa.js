@@ -1,14 +1,14 @@
-class Layout {
-    constructor(...pages) {
+class Layout{
+    constructor(...pages){
         this.pages = pages;
     }
 
-    load() {
+    load(){
         return Promise.all(this.pages.map((page) => page.load()));
     }
 
-    show(el) {
-        for (let page of this.pages) {
+    show(el){
+        for (let page of this.pages){
             const div = document.createElement('div');
             page.show(div);
             el.appendChild(div);
@@ -16,23 +16,23 @@ class Layout {
     }
 }
 
-class Page {
-    constructor(url) {
+class Page{
+    constructor(url){
         this.url = 'pages/' + url;
     }
 
-    async load() {
+    async load(){
         try {
             const response = await fetch(this.url);
-            if (response.ok) {
+            if (response.ok){
                 const contentType = response.headers.get('Content-Type') || '';
                 if (contentType.includes('text/html')) {
                     return response
                         .text()
-                        .then((res) => {
+                        .then((res) =>{
                             return (this.html = res);
                         })
-                        .catch((error) => {
+                        .catch((error) =>{
                             return Promise.reject(
                                 new ResponseError('HTML error: ' + error.message)
                             );
@@ -49,20 +49,20 @@ class Page {
         }
     }
 
-    show(el) {
+    show(el){
         el.innerHTML = this.html;
     }
 }
 
-class Router {
-    constructor(routes, el) {
+class Router{
+    constructor(routes, el){
         this.routes = routes;
         this.el = el;
         window.onhashchange = this.hashChanged.bind(this);
         this.hashChanged();
     }
 
-    async hashChanged(e) {
+    async hashChanged(e){
         if (window.location.hash.length > 0) {
             const pageName = window.location.hash.substr(1);
             this.show(pageName);
@@ -71,7 +71,7 @@ class Router {
         }
     }
 
-    async show(pageName) {
+    async show(pageName){
         const page = this.routes[pageName];
         await page.load();
         this.el.innerHTML = "";
