@@ -136,7 +136,7 @@ toTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 
 function changeImage(){
 	let default_img = 0;
-	let num_files = 6;
+	let num_files = 8;
 	let about_pic = document.querySelector("#about-pic");
 	// update about image
 	if(about_pic != null){
