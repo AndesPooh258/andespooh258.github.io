@@ -165,7 +165,7 @@ function aboutImgInit(){
 	let img_str = getCookie("img_id");
 	let img_int = imgIsValid(img_str);
 	let about_pic = document.querySelector("#about-pic");
-	if (img != -1 && about_pic != null)
+	if (img_int != -1 && about_pic != null)
 		about_pic.src = "./img/about/image_" + img_int + ".jpg";
 }
 
