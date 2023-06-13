@@ -142,7 +142,7 @@ const num_files = 6;
 function setCookie(key, value, duration) {
     let exp = new Date();
     exp.setTime(exp.getTime() + (duration * 86400000));
-    document.cookie = key + "=" + value + ";expires=" + exp_time.toGMTString() + ";path=/";
+    document.cookie = key + "=" + value + ";expires=" + exp.toGMTString() + ";path=/";
 }
 
 function getCookie(key) {
@@ -173,4 +173,5 @@ function setImage(){
 	img_str = prompt("Please enter a number between 0 and " + (num_files - 1), "");
 	if (imgIsValid(img_str))
 		setCookie("img_id", img_str, 365);
+	aboutImgInit();
 }
