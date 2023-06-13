@@ -139,24 +139,24 @@ toTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 
 const num_files = 6;
 
-function setCookie(key, value, duration) {
+function setCookie(key, value, duration){
     let exp = new Date();
     exp.setTime(exp.getTime() + (duration * 86400000));
     document.cookie = key + "=" + value + ";expires=" + exp.toGMTString() + ";path=/";
 }
 
-function getCookie(key) {
+function getCookie(key){
     let cookie_dec = decodeURIComponent(document.cookie);
     let vals = cookie_dec.split(';');
-	for (let val in vals){
-		val = val.replace(" ", "");
+	for (let i = 0; i < vals.length; i++){
+		let val = vals[i].replace(" ", "");
 		if (val.indexOf(key + "=") == 0)
-			return val.substring(key.length, val.length);
+			return val.substring(key.length + 1, val.length);
 	}
     return "";
 }
 
-function imgIsValid(img_str) {
+function imgIsValid(img_str){
 	let img_int = parseInt(img_str, 10)
 	return Number.isNaN(img_int) || img_int < 0 || img_int >= num_files ? -1 : img_int
 }
@@ -171,7 +171,7 @@ function aboutImgInit(){
 
 function setImage(){
 	img_str = prompt("Please enter a number between 0 and " + (num_files - 1), "");
-	if (imgIsValid(img_str))
+	if (imgIsValid(img_str) != -1)
 		setCookie("img_id", img_str, 365);
 	aboutImgInit();
 }
