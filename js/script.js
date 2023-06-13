@@ -151,7 +151,7 @@ function getCookie(key) {
 	for (let val in vals){
 		val = val.replace(" ", "");
 		if (val.indexOf(key + "=") == 0)
-			return val.substring(key_.length, val.length);
+			return val.substring(key.length, val.length);
 	}
     return "";
 }
