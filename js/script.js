@@ -30,6 +30,9 @@ function pageInit(){
 			tables[i].classList.toggle("table-dark");
 		}
 	}
+	// initialize about images
+	aboutImgInit();
+
 	// initialize pop-up images
 	popupInit();
 }
@@ -134,17 +137,40 @@ function popupInit(){
 /* other features */
 toTop = () => window.scrollTo({top: 0, behavior: 'smooth'});
 
-function changeImage(){
-	let default_img = 0;
-	let num_files = 6;
-	let about_pic = document.querySelector("#about-pic");
-	// update about image
-	if(about_pic != null){
-		let img = parseInt(about_pic.alt, 6);
-		if (Number.isNaN(img)){
-			img = default_img;
-		} else img = ++img % num_files;
-		about_pic.alt = img;
-		about_pic.src = "./img/about/image_" + img + ".jpg";
+const num_files = 6;
+
+function setCookie(key, value, duration) {
+    let exp = new Date();
+    exp.setTime(exp.getTime() + (duration * 86400000));
+    document.cookie = key + "=" + value + ";expires=" + exp_time.toGMTString() + ";path=/";
+}
+
+function getCookie(key) {
+    let cookie_dec = decodeURIComponent(document.cookie);
+    let vals = cookie_dec.split(';');
+	for (let val in vals){
+		val = val.replace(" ", "");
+		if (val.indexOf(key + "=") == 0)
+			return val.substring(key_.length, val.length);
 	}
+    return "";
+}
+
+function imgIsValid(img_str) {
+	let img_int = parseInt(img_str, 10)
+	return Number.isNaN(img_int) || img_int < 0 || img_int >= num_files ? -1 : img_int
+}
+
+function aboutImgInit(){
+	let img_str = getCookie("img_id");
+	let img_int = imgIsValid(img_str);
+	let about_pic = document.querySelector("#about-pic");
+	if (img != -1 && about_pic != null)
+		about_pic.src = "./img/about/image_" + img_int + ".jpg";
+}
+
+function setImage(){
+	img_str = prompt("Please enter a number between 0 and " + (num_files - 1), "");
+	if (imgIsValid(img_str))
+		setCookie("img_id", img_str, 365);
 }
