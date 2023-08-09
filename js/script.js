@@ -135,7 +135,7 @@ function popupInit(){
 	if(sushi != null)
 		addPopupOnClick(popup_box, popup_img, popup_caption, sushi, 
 			"./img/popup/sushi.jpg",
-			"Amazing kohada sushi in Nihonbashi Kakigaracho Sugita (日本橋 蛎殻町 すぎた).");
+			"Amazing kohada sushi in Nihonbashi Kakigaracho Sugita (日本橋蛎殻町 すぎた).");
 	return true;
 }
 
