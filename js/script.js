@@ -110,6 +110,7 @@ function popupInit(){
 	let estr_cuhk = document.querySelector("#popup-estr-cuhk");
 	let pkm_team = document.querySelector("#popup-pkm-team");
 	let ptcg_deck = document.querySelector("#popup-ptcg-deck");
+	let sushi = document.querySelector("#popup-sushi");
 	// set onClick event on close button
 	popup_close.onclick = function(){
 		popup_box.classList.toggle("hide");
@@ -131,6 +132,10 @@ function popupInit(){
 		addPopupOnClick(popup_box, popup_img, popup_caption, ptcg_deck, 
 			"./img/popup/ptcg_deck.jpg",
 			"My current PTCG deck.");
+	if(sushi != null)
+		addPopupOnClick(popup_box, popup_img, popup_caption, sushi, 
+			"./img/popup/sushi.jpg",
+			"Amazing kohada sushi in Nihonbashi Kakigaracho Sugita (日本橋 蛎殻町 すぎた).");
 	return true;
 }
 
